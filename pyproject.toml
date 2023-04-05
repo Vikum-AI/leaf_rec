@@ -6,11 +6,10 @@ authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.11,<3.12"
+python = ">=3.10,<3.12"
 django = "^4.2"
 djangorestframework = "^3.14.0"
 drf-yasg = "^1.21.5"
-opencv-python = "^4.7.0.72"
 tensorflow = "^2.12.0"
 matplotlib = "^3.7.1"
 gunicorn = "^20.1.0"
