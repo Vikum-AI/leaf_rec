@@ -2,11 +2,6 @@ from rest_framework import serializers
 from .models import ProcessImage
 
 class ProcessImageSerializer(serializers.ModelSerializer):
-    def create(self, validated_data):
-        return ProcessImage.create_with_current_datetime(
-            image_src=validated_data['image_src']
-        )
-
     class Meta:
         model = ProcessImage
         fields = '__all__'
@@ -24,5 +19,5 @@ class FileUploadSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProcessImage
         fields = '__all__'
-        read_only_fields = ['created_at', 'updated_at']
+        read_only_fields = ['created_at', 'updated_at', 'prediction']
         

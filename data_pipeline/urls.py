@@ -25,6 +25,6 @@ urlpatterns = [
          name='schema-swagger-ui'),
     path('reswagger/', schema_view.with_ui('redoc', cache_timeout=0),
          name='schema-redoc'),
-    path('process_image/', ProcessImageView.as_view()),
+    path('processed_images/', ProcessImageView.as_view()),
     re_path(r'^upload/(?P<filename>[^/]+)$', FileUploadView.as_view())
 ]
