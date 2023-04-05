@@ -1,1 +1,1 @@
-web: gunicorn api.wsgi
+web: poetry env use 3.10 && gunicorn api.wsgi
