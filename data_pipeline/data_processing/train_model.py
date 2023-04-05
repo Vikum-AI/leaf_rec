@@ -3,7 +3,7 @@ import tensorflow as tf
 
 import numpy as np
 # from matplotlib import pyplot as plt
-from cv2 import imread, cvtColor, COLOR_BGR2RGB, imdecode, IMREAD_COLOR 
+from cv2 import imdecode, IMREAD_COLOR 
 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten
