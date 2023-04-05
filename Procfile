@@ -1,1 +1,1 @@
-poetry run python manage.py migrate && gunicorn api.wsgi
+gunicorn api.wsgi
