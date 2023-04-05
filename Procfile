@@ -1,1 +1,1 @@
-web: gunicorn api.wsgi
+web: apt-get update && apt-get install ffmpeg libsm6 libxext6  -y && gunicorn api.wsgi
