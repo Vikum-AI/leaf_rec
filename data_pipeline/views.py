@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from .serializers import ProcessImageSerializer, FileUploadSerializer
 from .models import ProcessImage
 from .data_processing.train_model import train_model
+from .data_processing.run_prediction import prediction
 
 class ProcessImageView(ListAPIView):
     serializer_class = ProcessImageSerializer
@@ -22,6 +23,6 @@ class FileUploadView(UpdateAPIView):
         serializer = FileUploadSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         file = request.FILES['file']
-        prediction = train_model(file)
-        ProcessImage.create_with_current_datetime(image_src=request.data['image_src'], prediction=prediction)
-        return Response({"leaf_prediction": prediction})
+        prediction_output = prediction(file)
+        ProcessImage.create_with_current_datetime(image_src=request.data['image_src'], prediction=prediction_output)
+        return Response({"leaf_prediction": prediction_output})
